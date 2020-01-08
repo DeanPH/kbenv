@@ -92,7 +92,7 @@ function kbenv_install () {
 
     if [[ -L "$KUBECTL_BINARY_PATH/kubectl" ]]
     then
-        actual_version="$(basename "$(readlink -f "$KUBECTL_BINARY_PATH/kubectl")")"
+        actual_version="$(basename "$(readlink "$KUBECTL_BINARY_PATH/kubectl")")"
         echo "kubectl is pointing to the ${actual_version//kubectl-} version"
         echo "Do you want to overwrite it? (y/n)"
         read -r overwrite
